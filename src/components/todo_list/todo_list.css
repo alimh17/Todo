@@ -1,0 +1,5 @@
+.vertical-timeline-element-icon {
+  background-color: var(--primary-color);
+  border: 1px solid var(--gray-color);
+  transition: all ease 0.5s;
+}

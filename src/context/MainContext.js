@@ -7,7 +7,16 @@ const MainContext = createContext({
 
     //* --------------------- Active Tab ------------------------------
     activeTab: [],
-    handleAcitveTab: () => { }
+    handleAcitveTab: () => { },
+
+    //* -------------------- Display add task form --------------------
+    showFormAddTask: false,
+    handleShowFormAddTask: () => { },
+
+    //* ---------------------Todo Lists -------------------------------
+    todos: [],
+    handleSetTodos: () => { },
+    handleRemoveTodos: () => { }
 
 })
 

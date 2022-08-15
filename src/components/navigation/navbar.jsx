@@ -8,12 +8,12 @@ import MainContext from "context/MainContext";
 import style from "./navbar.module.css";
 
 const Navbar = () => {
-  const { showSidebar, handleShowSidebar } = useContext(MainContext);
+  const { handleShowSidebar, handleShowFormAddTask } = useContext(MainContext);
 
   return (
-    <nav className={`${style.navbar} `}>
+    <nav className={`${style.navbar} sticky top-0 z-10`}>
       <ul className="flex container mx-auto  p-3 justify-between">
-        <li className="cursor-pointer">
+        <li className="cursor-pointer" onClick={handleShowFormAddTask}>
           <AiOutlinePlus />
         </li>
         <div className="flex">

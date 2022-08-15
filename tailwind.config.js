@@ -4,7 +4,17 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        wiggle: {
+          '0%': { opacity: '0%' },
+          '100%': { opacity: '100%' },
+        }
+      },
+      animation: {
+        wiggle: 'wiggle .5s ease-in both',
+      },
+    }
   },
   plugins: [],
 }

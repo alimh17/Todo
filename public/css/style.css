@@ -23,3 +23,16 @@
 body {
   font-family: "BYekan", sans-serif !important;
 }
+
+.custom-input {
+  border-radius: 8px;
+  width: 100%;
+  outline: 0;
+  padding: 5px;
+  background-color: #d9d9d950;
+  margin: 5px;
+}
+
+.custom-input:focus {
+  outline: #4b5563;
+}
