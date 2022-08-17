@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from 'components/navigation/navbar'
 import MainContext from 'context/MainContext'
 import AddTask from 'components/add_task/addTask'
+import moment from 'jalali-moment'
+import { convertNumber } from 'utils/convertNumber'
 
 const MainLayout = (props) => {
 
@@ -9,6 +11,8 @@ const MainLayout = (props) => {
     const [activeTab, setAcitveTab] = useState([true, false])
     const [showFormAddTask, setShowFormAddTask] = useState(false)
     const [todos, setTodos] = useState([])
+    const [todyTasks, setTodyTasks] = useState([])
+
 
     const handleShowSidebar = () => {
         setShowSidebar(!showSidebar)
@@ -34,16 +38,29 @@ const MainLayout = (props) => {
         copyTodos.push(copyTodo)
         setTodos(copyTodos)
 
-        console.log(todos);
+        localStorage.setItem("todos", JSON.stringify(copyTodos))
+        handleTodyTasks()
     }
 
-    const handleRemoveTodos = (item) => {
+    const handleRemoveTodos = (id) => {
         const copyTodos = [...todos]
-        const filter = copyTodos.filter(f => f.id === item)
+        const filter = copyTodos.filter(f => f.id !== +id)
         setTodos(filter)
+        localStorage.setItem("todos", JSON.stringify(filter))
+        handleTodyTasks()
     }
 
+    const handleTodyTasks = () => {
+        const todos = JSON.parse(localStorage.getItem('todos'))
+        const m = moment();
+        const day = m.locale("fa").format("DD");
+        const filter = todos.filter(f => day === convertNumber(f.day))
+        setTodyTasks(filter)
+    }
 
+    useEffect(() => {
+        handleTodyTasks()
+    }, [])
 
     return (
         <MainContext.Provider value={{
@@ -55,7 +72,9 @@ const MainLayout = (props) => {
             handleSetTodos,
             showFormAddTask,
             handleShowFormAddTask,
-            handleRemoveTodos
+            handleRemoveTodos,
+            todyTasks,
+            handleTodyTasks
         }}>
             <Navbar />
             <AddTask />

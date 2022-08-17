@@ -16,7 +16,11 @@ const MainContext = createContext({
     //* ---------------------Todo Lists -------------------------------
     todos: [],
     handleSetTodos: () => { },
-    handleRemoveTodos: () => { }
+    handleRemoveTodos: () => { },
+
+    //*---------------------- Today Tasks ---------------------------
+    todyTasks: [],
+    handleTodyTasks: () => { },
 
 })
 

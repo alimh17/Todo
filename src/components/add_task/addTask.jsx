@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useState } from "react";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import { BsCalendar3 } from "react-icons/bs";
@@ -18,8 +18,6 @@ const AddTask = () => {
   const min = m.locale("fa").format("DD");
   const { handleSetTodos, showFormAddTask, handleShowFormAddTask } =
     useContext(MainContext);
-
-  const nameRef = useRef(null);
 
   const formik = useFormik({
     initialValues: {

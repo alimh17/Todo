@@ -1,14 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const Chart = () => {
+  const todos = JSON.parse(localStorage.getItem("todos"));
+  const [chartData, setChartData] = useState([0, 100]);
   const data = {
     datasets: [
       {
-        data: [70, 30],
+        data: chartData,
         backgroundColor: ["#fca311", "#14213d"],
         borderColor: ["#fca311", "#14213d"],
         borderWidth: 1,
@@ -16,11 +18,14 @@ const Chart = () => {
     ],
   };
 
-  //   useEffect(() => {
-  //     data.datasets.map((item) => {
-  //       console.log(item.data);
-  //     });
-  //   }, []);
+  useEffect(() => {
+    if (!todos) {
+      setChartData([0, 100]);
+    } else {
+      const val = 100 / todos.length;
+      console.log(val);
+    }
+  }, []);
 
   return (
     <div
@@ -31,7 +36,7 @@ const Chart = () => {
       }}
     >
       <Doughnut data={data} />
-      <h3 className="p-2 text-2xl ">70%</h3>
+      <h3 className="p-2 text-2xl ">{chartData[0]}%</h3>
     </div>
   );
 };
