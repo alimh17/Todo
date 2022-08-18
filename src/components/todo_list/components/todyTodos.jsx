@@ -15,23 +15,21 @@ const TodyTodos = () => {
   const m = moment();
   const day = m.locale("fa").format("DD");
 
-  console.log(todyTasks);
-
   return (
     <>
       {todyTasks.length > 0 ? (
         <div dir="rtl">
-          <VerticalTimeline lineColor="#8E8E8E55" layout="1-column-right">
+          <VerticalTimeline lineColor="#90909044" layout="1-column-right">
             {todyTasks.map((todo) => (
               <VerticalTimelineElement
                 key={todo.id}
                 className="vertical-timeline-element--education"
                 contentStyle={{
-                  background: "#ffffff",
-                  border: "1px solid var(--gray-color)",
+                  border: "1px solid var(--pallet-1)",
+                  boxShadow: "0 0 0",
                 }}
                 contentArrowStyle={{
-                  borderRight: "7px solid  rgb(33, 150, 243)",
+                  borderRight: "7px solid  #1985a1",
                 }}
                 date={
                   convertNumber(todo.day) === day
@@ -41,7 +39,6 @@ const TodyTodos = () => {
                     : todo.date
                 }
                 iconOnClick={(e) => {
-                  e.target.style.backgroundColor = "green";
                   e.target.id = todo.id;
                   handleRemoveTodos(e.target.id);
                 }}

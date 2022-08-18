@@ -7,10 +7,12 @@ import { convertNumber } from 'utils/convertNumber'
 
 const MainLayout = (props) => {
 
+    const getTodos = JSON.parse(localStorage.getItem('todos'))
+
     const [showSidebar, setShowSidebar] = useState(false)
     const [activeTab, setAcitveTab] = useState([true, false])
     const [showFormAddTask, setShowFormAddTask] = useState(false)
-    const [todos, setTodos] = useState([])
+    const [todos, setTodos] = useState(getTodos !== null ? getTodos : [])
     const [todyTasks, setTodyTasks] = useState([])
 
 
@@ -51,16 +53,19 @@ const MainLayout = (props) => {
     }
 
     const handleTodyTasks = () => {
-        const todos = JSON.parse(localStorage.getItem('todos'))
-        const m = moment();
-        const day = m.locale("fa").format("DD");
-        const filter = todos.filter(f => day === convertNumber(f.day))
-        setTodyTasks(filter)
+        const allTodos = JSON.parse(localStorage.getItem('todos'))
+        if (allTodos !== null) {
+            const m = moment();
+            const day = m.locale("fa").format("DD");
+            const filter = todos.filter(f => day === convertNumber(f.day))
+            setTodyTasks(filter)
+
+        }
     }
 
     useEffect(() => {
         handleTodyTasks()
-    }, [])
+    }, [todos])
 
     return (
         <MainContext.Provider value={{

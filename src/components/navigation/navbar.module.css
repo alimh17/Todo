@@ -1,4 +1,8 @@
 .navbar {
-  background-color: var(--primary-color);
-  color: var(--darkblue-color);
+  background-color: var(--pallet-2);
+  color: var(--pallet-3);
+}
+
+.plus {
+  color: var(--pallet-5);
 }

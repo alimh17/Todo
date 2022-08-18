@@ -1,5 +1,9 @@
 .vertical-timeline-element-icon {
-  background-color: var(--primary-color);
-  border: 1px solid var(--gray-color);
+  background-color: var(--pallet-5);
+  transition: all ease 0.5s;
+  cursor: pointer;
+}
+.vertical-timeline-element-icon:hover {
+  background-color: #1945a1;
   transition: all ease 0.5s;
 }

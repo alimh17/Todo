@@ -17,7 +17,7 @@ const NoTask = () => {
       />
       <h3 className="my-2">فعالیتی وجود ندارد</h3>
       <AiOutlinePlus
-        className="text-orange-500"
+        style={{ color: "var(--pallet-5)" }}
         onClick={handleShowFormAddTask}
       />
     </div>

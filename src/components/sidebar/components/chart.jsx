@@ -11,21 +11,20 @@ const Chart = () => {
     datasets: [
       {
         data: chartData,
-        backgroundColor: ["#fca311", "#14213d"],
-        borderColor: ["#fca311", "#14213d"],
+        backgroundColor: ["#1985a1", "#c5c3c6"],
+        borderColor: ["#1985a1", "#c5c3c6"],
         borderWidth: 1,
       },
     ],
   };
 
-  useEffect(() => {
-    if (!todos) {
-      setChartData([0, 100]);
-    } else {
-      const val = 100 / todos.length;
-      console.log(val);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (!todos) {
+  //     setChartData([0, 100]);
+  //   } else {
+  //     const val = 100 / todos.length;
+  //   }
+  // }, [todos]);
 
   return (
     <div

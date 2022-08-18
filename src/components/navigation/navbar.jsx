@@ -11,9 +11,12 @@ const Navbar = () => {
   const { handleShowSidebar, handleShowFormAddTask } = useContext(MainContext);
 
   return (
-    <nav className={`${style.navbar} sticky top-0 z-10`}>
+    <nav className={`${style.navbar} sticky top-0 z-10 hidden md:flex`}>
       <ul className="flex container mx-auto  p-3 justify-between">
-        <li className="cursor-pointer" onClick={handleShowFormAddTask}>
+        <li
+          className={`cursor-pointer ${style.plus}`}
+          onClick={handleShowFormAddTask}
+        >
           <AiOutlinePlus />
         </li>
         <div className="flex">

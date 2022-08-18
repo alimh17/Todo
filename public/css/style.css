@@ -13,11 +13,12 @@
 }
 
 :root {
-  --primary-color: #fca311;
-  --darkblue-color: #14213d;
-  --gray-color: #e5e5e5;
-  --white-color: #ffffff;
-  --dark-color: #000000;
+  --pallet-1: #dcdcdd;
+  --pallet-2: #c5c3c6;
+  --pallet-3: #46494c;
+  --pallet-4: #4c5c68;
+  --pallet-5: #1985a1;
+  --pallet-6: #909090;
 }
 
 body {

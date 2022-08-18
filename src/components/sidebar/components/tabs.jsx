@@ -13,16 +13,14 @@ const Tabs = () => {
         onClick={() => handleAcitveTab(0)}
         style={
           activeTab[0]
-            ? { backgroundColor: "var(--primary-color)" }
+            ? { backgroundColor: "var(--pallet-3)" }
             : { backgroundColor: "#FFFFFF" }
         }
       >
         <span
           className="mx-2 item"
           style={
-            activeTab[0]
-              ? { color: "#FFFFFF" }
-              : { color: "var(--darkblue-color)" }
+            activeTab[0] ? { color: "#FFFFFF" } : { color: "var(--pallet-3)" }
           }
         >
           فعالیت ها
@@ -30,9 +28,7 @@ const Tabs = () => {
         <FiActivity
           className="icons"
           style={
-            activeTab[0]
-              ? { color: "#FFFFFF" }
-              : { color: "var(--primary-color)" }
+            activeTab[0] ? { color: "#ffffff" } : { color: "var(--pallet-5)" }
           }
         />
       </li>
@@ -41,16 +37,14 @@ const Tabs = () => {
         onClick={() => handleAcitveTab(1)}
         style={
           activeTab[1]
-            ? { backgroundColor: "var(--primary-color)" }
+            ? { backgroundColor: "var(--pallet-3)" }
             : { backgroundColor: "#FFFFFF" }
         }
       >
         <span
           className="mx-2 item"
           style={
-            activeTab[1]
-              ? { color: "#FFFFFF" }
-              : { color: "var(--darkblue-color)" }
+            activeTab[1] ? { color: "#FFFFFF" } : { color: "var(--pallet-3)" }
           }
         >
           امروز
@@ -58,9 +52,7 @@ const Tabs = () => {
         <IoTodayOutline
           className="icons"
           style={
-            activeTab[1]
-              ? { color: "#FFFFFF" }
-              : { color: "var(--primary-color)" }
+            activeTab[1] ? { color: "#FFFFFF" } : { color: "var(--pallet-5)" }
           }
         />
       </li>
